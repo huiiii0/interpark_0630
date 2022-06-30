@@ -1,0 +1,2169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+
+    <script src="js/controlbox.js"></script>
+    <script src="js/banner.js"></script>
+    <script src="js/book.js"></script>
+    <script src="js/mediarec.js"></script>
+    <script src="js/howrec.js"></script>
+    <script src="js/fieldbook1.js"></script>
+    <script src="js/fieldbook2.js"></script>
+    <script src="js/fieldbook3.js"></script>
+    <script src="js/fieldbook4.js"></script>
+    <script src="js/fieldbook5.js"></script>
+    <script src="js/fieldbook6.js"></script>
+    <script src="js/fieldrec1.js"></script>
+    <script src="js/fieldrec2.js"></script>
+    <script src="js/fieldrec3.js"></script>
+    <script src="js/fieldrec4.js"></script>
+    <script src="js/fieldrec5.js"></script>
+    <script src="js/fieldrec6.js"></script>
+    <script src="js/monthbook1.js"></script>
+    <script src="js/monthbook2.js"></script>
+    <script src="js/sale1.js"></script>
+    <script src="js/sale2.js"></script>
+    <script src="js/sidebanner.js"></script>
+    <script src="js/etcbanner.js"></script>
+    <script src="js/etcpro1.js"></script>
+    <script src="js/etcprobot1.js"></script>
+    <script src="js/etcpro2.js"></script>
+    <script src="js/etcprobot2.js"></script>
+    <script src="js/etcpro3.js"></script>
+    
+    
+
+    
+
+    <style>
+        * {margin:0; box-sizing:border-box;}
+        ul,ol,li {list-style:none; margin:0; padding:0;}
+        /*사이드 로그인박스*/
+        .loginfixed { width: 8px; height: 100vh; position: fixed; z-index:  5; right: 0; background-color: #fff; border-left: 1px solid #bbb; }
+        .nextbox { position: absolute; top: 50%; transform: translateY(-50%); left: -21px; font-size: 18px; padding: 10px; background-color: #fff; height: 60px; line-height: 35px; color: #808464; border-left: 1px solid #bbb; border-top: 1px solid #bbb; border-bottom: 1px solid #bbb; z-index: 5; width: 20px; cursor: pointer; }
+        .fixloginbox { height: 145px; background-color: #EF554D; width: 145px; color: #fff; text-align: center; }
+        .fixloginbox > h3 { height: 55px; line-height: 55px; }
+        .fixloginbox > p { height: 50px; font-size: 13px; line-height: 150%; } 
+        .fixloginbox > button { width: 100px; height: 25px; line-height: 22px; color: #fff; background-color: #be3834; border: #AF322E; outline: none; cursor: pointer; }
+        .bixbox { width: 145px; height: 30px; border-top: 1px solid #bbb; font-size: 11px; line-height: 25px; padding: 0 10px; cursor: pointer; position: relative; }
+        .bixbox:nth-of-type(5) { height: 60%; padding-top: 10px;  }
+        .bixbox img { width: 125px; height: 330px; }
+        .bixbox:nth-of-type(6) { text-align: center; font-size:15px; line-height: 50px; }
+        .bixbox span { color: #F8ABAD; font-weight: bold; }
+        .bixbox i { position: absolute; right: 4px; top: 30%; color: #868686; font-size: 12px; }
+        .bixbox .fa-chevron-right { position: absolute; right: 9px; top: 30%; font-size: 10px; }
+        .bixbox .noab { position: static; color:#e46c52; }
+        .prev { position: absolute; display: none; }
+        .next { position: absolute; }
+        #topBtn { width: 50px; height: 50px; margin: 0 auto; }        
+
+        /*****헤더*****/
+        header {width:100%; height:auto;}
+        #topBanner {width:100%; height:50px; display:flex; flex-flow:row wrap; position:relative; justify-content:space-between;}        
+        #topBanner .box1 {width:50%; height:100%; background:#fbdad5; text-align:right}
+        #topBanner .box1 img {height:100%;}
+        #topBanner .box2 {width:50%; height:100%; background:#c2a59d; text-align:left; display:flex; flex-flow:row wrap;}
+        #topBanner .box3 {width:20px; height:20px; cursor: pointer;}
+        #topBanner .box2 img {height:100%;}
+        
+        
+
+        /*홈*/
+        #htopWrap {width:100%; height:32px; border-bottom:1px solid #ccc; border-top:1px solid #ccc;}
+        #htop {width:980px; height:100%; margin:0 auto; display:flex; justify-content:space-between;}        
+        #home {width:220px; height:100%; display:flex;}
+        #home .box {width:33.3%; height:100%; text-align:center;}
+        #home .box:nth-of-type(1) {border-left:1px solid #ccc;}
+        #home .box:nth-of-type(2) {width:56%; border-left:1px solid #ccc; border-right:1px solid #ccc;}
+        #home .box:nth-of-type(2) a {color:red; font-weight:bold; border:none;}
+        #home .box:nth-of-type(4) {border-left:1px solid #ccc; border-right:1px solid #ccc;}
+        #home .box a {text-decoration:none; color:#555; font-size:12px; opacity:0.8;}
+
+        /*로그인*/
+        #login {width:483px; height:100%; position:relative;}
+        #login .login {display:flex; flex-flow:row wrap; justify-content:space-around;}
+        #login li {padding:1px; margin:1px;}
+        #login li a {text-decoration:none; color:#333; font-size:11px;}
+        #login .sbar a {color:#ccc; font-size:10px;}
+        #login .sub {position:absolute; z-index:3; border:2px solid #e38989; background:#fff; display:none; padding:5px;}
+
+        /*로고*/
+        #hsecWrap {width:100%; height:99px;}
+        #hsec {width:980px; height:100%; margin:0 auto; display:flex; justify-content:space-between;}
+        #logo {width:220px; height:100%;}
+        #logo a img {width:100%; height:100%;}
+
+        /*검색창*/
+        #serchWrap {width:450px; height:100%; display:flex; flex-flow:row wrap;}
+        #serchtop {width:100%; height:20%;}
+        #serch {width:100%; height:40%; margin:0 auto; border-bottom:2px solid #ef544d; display:flex; flex-flow:row wrap; justify-content:space-between;}
+        #serch input {border:none; width:87%; height:60%; margin:10px 0 0 10px;}
+        #serchbtn {width:10%; height:100%; text-align:center; font-size:26px;}
+        #serchbtn i {color:#ef544d; left:0;}
+        #serchBot {width:100%; height:40%;}
+        #serchBot ul {display:flex; flex-flow:row wrap; justify-content: center; font-weight: bold;}
+        #serchBot ul .sbar {color:skyblue; font-size:12px; margin:2px 0 0 0;}
+        #serchBot ul li a {text-decoration:none; color:skyblue; font-size:12px; padding:6px;}
+
+        /*광고배너*/
+        #ad {width:192px; height:100%;}
+        #ad img {margin:15px 0 0 8px;}
+        
+        /*카테고리*/
+        #hbotWrap {width:100%; height:46px; background:#ef544d;}
+        nav {width:980px; height:100%; margin:0 auto; display:flex;}
+
+        /*전체카테고리*/
+        #categoryAll {width:172px; height:100%; background:#c43730;  position:relative; text-align:center;}
+        #categoryAll:hover {background:rgba(0,0,0,0.6); cursor:pointer;}
+        #categoryAll:hover span {color:#fff1a2}        
+        #categoryAll span {color:#fff; margin:13px 0 0 0;}
+        #categoryAll span:after {content: "전체카테고리"; margin:0 0 0 5px; font-size:14px;}
+
+        /*전체카테고리서브*/
+        .categoryMenu {width:980px; height:700px; background:#fff; position:absolute; z-index:3; margin:45px 0 0 0; display:none;}
+        .categoryWrap {width:100%; height:100%; display:flex; border:2px solid #c43730;}
+        .categoryWrap h1 {width:100%; font-size:14px; padding:15px;}
+        .categoryWrap > .category1 {width:30%; height:100%; display:flex; flex-flow:row wrap; border-right:1px solid #ccc;}  
+        .categoryWrap > .category1 > .cate1Box1 {width:50%; height:100%;}
+        .categoryWrap > .category1 > .cate1Box2 {width:50%; height:100%;}
+        .categoryWrap > .category2 {width:20%; height:100%; border-right:1px solid #ccc;}
+        .categoryWrap > .category3 {width:20%; height:100%; border-right:1px solid #ccc;}
+        .categoryWrap > .category4 {width:20%; height:100%; border-right:1px solid #ccc;}
+        .categoryWrap > .category5 {width:20%; height:100%;}
+
+        .categoryWrap ul {padding:15px;}
+        .categoryWrap li a {text-decoration:none; color:#333; font-size:12px; letter-spacing: -1px;}
+        
+        
+        
+        
+        
+
+        /*베스트셀러 등등*/
+        #category1 {width:377px; height:100%;}
+        #category1 ul {display:flex; flex-flow:row wrap; justify-content: space-evenly;}
+        #category1 ul li {line-height:42px;}
+        #category1 ul li a {text-decoration:none; color:#fff; font-size:14px; font-weight:bold;}
+
+        #category2Wrap {width:540px; height:100%; display:flex; flex-flow:row wrap; justify-content: end;}
+        #category2 {width:200px; height:100%;}
+        #category2 ul {display:flex; flex-flow:row wrap; justify-content: space-evenly;}
+        #category2 ul li {line-height:42px;}
+        #category2 ul li a {text-decoration:none; color:#fff1a2; font-size:14px; font-weight:bold;}
+
+        /*****메인*****/
+        main {width:100%; height:auto;}
+
+        /*슬라이드*/
+        #sliderWrap {width:100%; height:316px; position:relative;}   
+        
+        
+        #slideWrap {width:980px; height:316px; margin:0 auto; display:flex;}
+        #slideImg {width:100%; height:316px; position:relative;}
+        
+        .slide {width:100%;}
+        .slide li {width:100%; height:316px; position:absolute; left:0; top:0;}
+        .slide li:not(:first-child) {display:none;}
+        .slide li img {width:100%; height:100%;}
+
+        #slideImg span {position: absolute; top:50%; display: block; font-size: 38px; color:#ccc; line-height: 40px; cursor: pointer; height: 50px; transform: translateY(-50%);}
+        #slideImg span:hover {color:#666;}
+        #slideImg .prev {left:0;}
+        #slideImg .next {right:0;}
+
+        /*랭킹박스*/
+        #ranking {width:23%; height:100%; background:rgba(50,50,50,0.5); display:flex; flex-flow:row wrap;}
+        #ranking:hover {cursor: pointer;}
+        #ranking .ranWrap1 {width:100%; height:10%;  display:flex; flex-flow:row wrap; align-content:center; border-bottom:1px solid rgba(27, 27, 27, 0.4);}    
+        #ranking .ranWrap1 h1 {margin:-15px 0 0 0; padding:10px;}
+        #ranking .ranWrap1 h1 a {text-decoration:none; color:#fff1a2; font-size:15px;}
+
+        #ranking .ranWrap2 {width:100%; height:10%; }
+        #ranking .ranWrap2 ul {height:100%; display:flex; flex-flow:row wrap; text-align:center;}
+        #ranking .ranWrap2 ul li {width:50%; color:#fff; font-size:12px; display:flex; flex-flow:row wrap; justify-content: center; align-content:center;}
+        #ranking .ranWrap2 ul li:nth-of-type(1) {border:1px solid rgba(255,255,255,0.3); border-bottom:none;}
+        #ranking .ranWrap2 ul li:nth-of-type(2) {border-bottom:1px solid rgba(255,255,255,0.3);}
+        
+        
+        #ranking .ranWrap3 {width:100%; height:80%; border:1px solid rgba(255,255,255,0.3); border-top:none;}
+        #ranking .ranWrap3 ul {margin:10px 0 0 0;}
+        #ranking .ranWrap3 li {width:218px; height:23px; line-height:30px;}
+        #ranking .ranWrap3 a {text-decoration:none; color:#fff; font-size:11px;}
+        #ranking .ranWrap3 a .no {display:block; float:left; width:24px; height:100%; text-align:right;}
+        #ranking .ranWrap3 a .udWrap {display:block; float:left; white-space:nowrap; width:45px; height:100%;}
+        #ranking .ranWrap3 a  .udWrap #iconUp {float:left; display:block; margin:10px 0 0 9px; color:red;}
+        #ranking .ranWrap3 a  .udWrap #iconDown {float:left; display:block; margin:10px 0 0 9px; color:blue;}
+        #ranking .ranWrap3 a  .udWrap #iconMi {float:left; display:block; margin:10px 0 0 9px; color:#333;}
+        #ranking .ranWrap3 a em {display:block; float:left; margin-left:9px; font-size:10px;}
+        #ranking .ranWrap3 a strong {display:block; float:left; width:147px; height:100%; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+
+        #ranking .ranWrap4 {width:100%; height:80%; display:none; border:1px solid rgba(255,255,255,0.3); border-top:none;}
+        #ranking .ranWrap4 ul {margin:10px 0 0 0;}
+        #ranking .ranWrap4 li {width:218px; height:23px; line-height:30px;}
+        #ranking .ranWrap4 a {text-decoration:none; color:#fff; font-size:11px;}
+        #ranking .ranWrap4 a .no {display:block; float:left; width:24px; height:100%; text-align:right;}
+        #ranking .ranWrap4 a .udWrap {display:block; float:left; white-space:nowrap; width:45px; height:100%;}
+        #ranking .ranWrap4 a  .udWrap #iconUp {float:left; display:block; margin:10px 0 0 9px; color:red;}
+        #ranking .ranWrap4 a  .udWrap .new {float:left; display:block; margin:0px 0 0 9px; color:red; font-size:5px}
+        #ranking .ranWrap4 a  .udWrap #iconDown {float:left; display:block; margin:10px 0 0 9px; color:blue;}
+        #ranking .ranWrap4 a  .udWrap #iconMi {float:left; display:block; margin:10px 0 0 9px; color:#333;}
+        #ranking .ranWrap4 a em {display:block; float:left; margin-left:9px; font-size:10px;}
+        #ranking .ranWrap4 a strong {display:block; float:left; width:147px; height:100%; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+
+        /*슬라이드컨트롤러*/
+        #sliderControl {width:100%; height:47px; background:#f7f7f7}
+        #controlWrap {width:980px; height:100%; margin:0 auto; display:flex; flex-flow:row wrap; justify-content:start;}
+        #controlWrap .cbox {width:19.4%; height:100%; border-top:1px solid black; display:flex; flex-flow:row wrap; justify-content:center; align-items: center;}
+        #controlWrap .cbox:hover {cursor: pointer;}
+        #controlWrap .cbox h1 {font-size:12px;}
+        #controlWrap .cbox1 {width:22.4%; height:100%; border-top:1px solid black;}
+        
+
+        /*배너*/
+        #bannerWrap {width:100%; height:180px;}
+        #banner {width:980px; height:100%; margin:0 auto; display:flex; flex-flow:row wrap; justify-content:space-between; align-items:center;}
+        #banner .bbox {width:320px; height:80px;}
+        #banner .bbox img {width:100%; height:100%;}
+
+        /*인터파크추천*/
+        #recommendWrap {width:100%; height:360px; display:flex; flex-flow:row wrap; justify-content:space-around; align-items: center; position:relative;}        
+        #recomend {width:980px; height:100%; margin:0 auto; display:flex;}
+
+        #sideBanner {width:100px; height:70%; display:flex; flex-flow:row wrap; position:absolute; left:330px; top:10px}
+        #sideBanner .boxwrap1 {width:100px; height:150px; position:relative; overflow:hidden;}    
+        #sideBanner .boxwrap1 .sideslide {width:350px}
+        #sideBanner .boxwrap1 .sideslide li {width:100px; height:150px; float:left;}
+        #sideBanner .boxwrap1 .sideslide li img {width:100%; height:100%;}
+        
+        #sideBanner .boxwrap1 span {position: absolute; top:80%; display: block; font-size: 25px; color:#ccc; line-height: 20px; cursor: pointer; height: 20px; background:rgba(0,0,0,0.6)}
+        #sideBanner .boxwrap1 span:hover {color:#666;}
+        #sideBanner .boxwrap1 .sideprev {left:0;}        
+        #sideBanner .boxwrap1 .sidenext {right:0;}
+        #sideBanner .boxwrap1 .box1 {width:100%; height:80%; display:flex; overflow:hidden;}        
+        #sideBanner .boxwrap1 .box1 li img {width:65%; height:100%;}        
+
+        
+
+        #sideBanner .boxwrap2 {width:100%; height:100%; display:flex; flex-flow:row wrap; justify-content:center; align-items:center;}
+
+        #recomendBox {width:980px; height:100%; display:flex; flex-flow:row wrap;}
+        #recomendBox .box1 {width:80%; height:100%;}
+        #recomendBox .box1 > .box1 {width:100%; height:10%;}
+        #recomendBox .box1 > .box1 h1 {background:url(img/ipkrecom.png) no-repeat; text-indent:-9999px; position:relative; left:40%; top:80%; z-index:1;}
+        #recomendBox .box1 > .box1 span {float:right; margin:-16px 10px 0 0; font-size:12px; padding:0 6px 0 0}
+        #recomendBox .box1 > .box1 i {float:right; margin:-14px 10px 0 0; font-size:12px; color:#666}
+        #recomendBox .box1 > .box1 span a {text-decoration:none; color:#666;}
+        #recomendBox .box1 > .box2 {width:100%; height:90%; border-top:1px solid black; display:flex; flex-flow:row wrap; justify-content:center; align-items:center; position:relative;}
+        #recomendBox .box1 > .box2 span {position: absolute; top:50%; display: block; font-size: 38px; color:#ccc; line-height: 40px; cursor: pointer; height: 50px; transform: translateY(-50%);}
+        #recomendBox .box1 > .box2 span:hover {color:#666;}
+        #recomendBox .box1 > .box2 .aprev {left:0;}
+        #recomendBox .box1 > .box2 .anext {right:0;}
+
+        #recomendBox .box1 > .box2 .bookWrap {width:90%; height:85%; display:flex; flex-flow:row wrap; position:relative;}
+        #recomendBox .box1 > .box2 .bookWrap .book {width:1000px; height:100%;  position: relative; overflow:hidden;}        
+        #recomendBox .box1 > .box2 .bookWrap .book .bslide {width:4000px; height:500px;}
+        #recomendBox .box1 > .box2 .bookWrap .book .bslide li {width:510px; height:275px; float:left;display:flex;}
+        #recomendBox .box1 > .box2 .bookWrap .book .bslide li .lboxImg {width:40%; height:100%; display:flex; flex-flow:row wrap; justify-content:center; align-items:center;}        
+        #recomendBox .box1 > .box2 .bookWrap .book .bslide li .lboxImg img {width:80%; height:80%;}
+        #recomendBox .box1 > .box2 .bookWrap .book .bslide li .lboxTxt {width:50%; height:100%; display:flex; flex-flow:row wrap; align-content: center;}
+        #recomendBox .box1 > .box2 .bookWrap .book .bslide li .lboxTxt .lboxTxt1 {width:100%; height:50%; display:flex; flex-flow:row wrap; align-content:flex-end;}
+        #recomendBox .box1 > .box2 .bookWrap .book .bslide li .lboxTxt .lboxTxt1 h6 {margin:0 0 45px 0; color:#333;}
+        #recomendBox .box1 > .box2 .bookWrap .book .bslide li .lboxTxt .lboxTxt2 {width:100%; height:40%; background:#eee; padding:10px; font-size:12px;}
+        
+
+        #recomendBox > .box2 {width:20%; height:100%; display:flex; flex-flow:row wrap;}
+        #recomendBox > .box2 > .box1 {width:100%; height:12%; display:flex; justify-content:start; align-items:end;}
+        #recomendBox > .box2 > .box1 h1 {font-size:12px;}
+        #recomendBox > .box2 > .box2 {border-top:1px solid black; width:100%; height:88%; background:#ccc;}
+        #recomendBox > .box2 > .box2 img {width:100%; height:100%}
+
+        /*출판사초이스 등등*/
+        #choiceWrap {width:100%; height:363px;}
+        #choice {width:980px; height:100%; margin:0 auto; display:flex; flex-flow:row wrap; justify-content: space-between;}
+        #choice .box1 {width:35%; height:100%; display:flex; flex-flow:row wrap;}
+        #choice .box1 .box1 {width:100%; height:10%; display:flex; flex-flow:row wrap; align-items:end;}     
+        #choice .box1 .box1 h1 {font-size:17px;}
+        #choice .box1 .box1 span {color:red;}
+        #choice .box1 .box2 {width:100%; height:90%; background:chartreuse; border:1px solid #ccc;}
+        #choice .box1 .box2 img {width:100%; height:100%;}
+        
+        #choice .box2 {width:35%; height:100%; display:flex; flex-flow:row wrap;}
+        #choice .box2 .box1 {width:100%; height:10%; display:flex; flex-flow:row wrap; align-items:end;}
+        #choice .box2 .box1 h1 {font-size:17px;}
+        #choice .box2 .box1 span {color:red;}
+        #choice .box2 .box2 {width:400px; height:90%; border:1px solid #ccc; position:relative; overflow:hidden;}
+        #choice .box2 .box2 .mslide {width:1300px; position:absolute;}
+        #choice .box2 .box2 .mslide li {width:340px; height:330px; float:left; display:flex; flex-flow:column wrap;}
+        #choice .box2 .box2 .mslide li .imgbox {width:50%; height:100%; display:flex; flex-flow:row wrap; justify-content:center; align-items:center;}
+        #choice .box2 .box2 .mslide li .imgbox a img {width:90%; height:80%;}
+        #choice .box2 .box2 .mslide li .lboxTxt1 {width:50%; height:50%; display:flex; flex-flow:column wrap; justify-content:end;}
+        #choice .box2 .box2 .mslide li .lboxTxt1 h6 {font-size:12px; color:#666;}
+        #choice .box2 .box2 .mslide li .lboxTxt1 h3 {font-size:15px; margin:0 0 20px 0;}
+        #choice .box2 .box2 .mslide li .lboxTxt2 {width:50%; height:50%; display:flex; flex-flow:column wrap; justify-content:start;}
+        #choice .box2 .box2 .mslide li .lboxTxt2 p {font-size:12px; margin:20px 0 0 0; color:#333}
+        #choice .box2 .box2 span {position: absolute; top:50%; display: block; font-size: 38px; color:#ccc; line-height: 40px; cursor: pointer; height: 50px; transform: translateY(-50%);}
+        #choice .box2 .box2 .prev {left:0;}
+        #choice .box2 .box2 .next {right:0;}
+
+        #choice .box3 {width:20%; height:100%; display:flex; flex-flow:row wrap;}
+        #choice .box3 .box1 {width:100%; height:10%; display:flex; flex-flow:row wrap; align-items:end;}
+        #choice .box3 .box1 h1 {font-size:17px;}
+        #choice .box3 .box1 span {color:red;}
+
+        #choice .box3 .box2 {width:100%; height:90%; border:1px solid #ccc; position:relative; overflow:hidden;}
+        #choice .box3 .box2 span {position: absolute; top:50%; display: block; font-size: 38px; color:#ccc; line-height: 40px; cursor: pointer; height: 50px; transform: translateY(-50%);}
+        #choice .box3 .box2 .hprev {left:0;}
+        #choice .box3 .box2 .hnext {right:0;}
+        #choice .box3 .box2 .hslide {width:1000px; position:absolute;}
+        #choice .box3 .box2 .hslide li {width:195px; height:330px;}
+        #choice .box3 .box2 .hslide li .imgbox {width:100%; height:70%; display:flex; flex-flow:row wrap; justify-content:center; align-items:center;}
+        #choice .box3 .box2 .hslide li .imgbox a img {width:90%; height:80%;}
+        #choice .box3 .box2 .hslide li .lboxTxt1 {width:100%; height:20%; display:flex; flex-flow:row wrap; align-items:center;}
+        #choice .box3 .box2 .hslide li .lboxTxt1 h3 {font-size:15px; text-align:center;}
+        #choice .box3 .box2 .hslide li .lboxTxt2 {width:100%; height:10%; display:flex; flex-flow:row wrap; align-items:center; justify-content:center;}
+        #choice .box3 .box2 .hslide li .lboxTxt2 h6 {font-size:12px; color:#666; margin:0 0 20px 0}
+        
+
+        /*초이스 밑 배너이미지*/
+        #bannerImage {width:100%; height:145px; margin:10px 0 0 0}        
+        #choiceBanner {width:980px; height:100%; background:wheat; margin:0 auto;}
+        #choiceBanner a img {width:100%; height:100%;}
+
+        /*분야별추천*/
+        #fieldWrap {width:100%; height:482px; display:flex; flex-flow:column-reverse;}
+        #field {width:980px; height:95%; margin:0 auto; display:flex; flex-flow:row wrap; position:relative;}
+        #field .fbox1 {width:100%; height:10%; display:flex; flex-flow:row wrap; justify-content:center; position:relative;}
+        #field .fbox1 h1 {font-size:22px; color:#555; text-align:center}
+        #field .fbox1 span {color:red;}
+        #field .fbox1 .titleBox {width:15%; height:auto; background:#fff; position:absolute; margin:35px 0 0 0}    
+        
+        #field .section {width:980px; height:70%; border-top:1px solid #000;}
+        #field .section #booklist {display:flex; flex-flow:row wrap; justify-content:space-around; align-items:flex-end; height:50px; border-bottom:1px solid #ccc;}
+        #field .section #booklist li {width:15%; height:100%; display:flex; flex-flow:row wrap; justify-content:center; align-items:flex-end; font-size:12px; padding:0 0 7px 0;}
+        #field .section #booklist li:hover {cursor: pointer;}
+        #field .section #list_a {width:980px; height:85%; }
+        #field .section #list_a .box {width:15%; height:90%; background:#eee; margin:15px 5px 5px 10px; float:left;}
+        #field .section #list_b {width:980px; height:85%; display:none;}
+        #field .section #list_b .box {width:15%; height:90%; background:#eee; margin:15px 5px 5px 10px; float:left;}
+        #field .section #list_c {width:980px; height:85%; display:none;}
+        #field .section #list_c .box {width:15%; height:90%; background:#eee; margin:15px 5px 5px 10px; float:left;}
+        #field .section #list_d {width:980px; height:85%; display:none;}
+        #field .section #list_d .box {width:15%; height:90%; background:#eee; margin:15px 5px 5px 10px; float:left;}
+        #field .section #list_e {width:980px; height:85%; display:none;}
+        #field .section #list_e .box {width:15%; height:90%; background:#eee; margin:15px 5px 5px 10px; float:left;}
+        #field .section #list_f {width:980px; height:85%; display:none;}
+        #field .section #list_f .box {width:15%; height:90%; background:#eee; margin:15px 5px 5px 10px; float:left;}
+        #field .section .box {display:flex; flex-flow:row wrap; justify-content:center; text-align:center;}
+        #field .section .box .imgbox {width:100%; height:93%;}
+        #field .section .box .boxTxt {width:100%; height:7%;}
+        #field .section .box .boxTxt p {font-size:12px; text-align:center}
+        #field .section .box a img {margin:10px 0 0 0;}
+        #field .section .box h3 {font-size:10px;}
+
+
+        #field .fbox4 {width:100%; height:20%; background:blue; margin:15px 0 0 0;}
+        #field .fbox4 img {width:100%; height:100%;}
+
+        /*이달의 책*/
+        #monthWrap {width:100%; height:360px;}
+        #month {width:980px; height:100%; margin:40px auto; display:flex; flex-flow:row wrap; justify-content:space-between;}
+        #month .monthRec {width:45%; height:100%; display:flex; flex-flow:row wrap;}
+        #month .monthRec .box1 {width:100%; height:10%; display:flex; flex-flow:row wrap; justify-content:space-between; align-items:flex-end; border-bottom:1px solid #000; position:relative;}
+        #month .monthRec .box1 h1 {font-size:17px;}
+        #month .monthRec .box1 h1 span {color:red;}
+        #month .monthRec .box1 .more {font-size:12px; margin:0 30px 0 0;}
+        #month .monthRec .box1 .mprev {position: absolute; top:50%; display: block; font-size: 12px; color:#aaa; line-height: 40px; cursor: pointer; height: 50px; transform: translateY(-25%); right:12px; font-weight:bold;}
+        #month .monthRec .box1 .mnext {position: absolute; top:50%; display: block; font-size: 12px; color:#aaa; line-height: 40px; cursor: pointer; height: 50px; transform: translateY(-25%); right:0; font-weight:bold;}
+        
+        #month .monthRec .box2 {width:441px; height:324px; position:relative; overflow:hidden;}
+        #month .monthRec .box2 .moslide {width:1900px;}
+        #month .monthRec .box2 .moslide li {width:441px; height:324px; float:left; display:flex; flex-flow:row wrap;}
+        #month .monthRec .box2 .moslide li .mbox1 {width:100%; height:50%;  display:flex; flex-flow:row wrap;}
+        #month .monthRec .box2 .moslide li .mbox1 .imgbox {width:40%; height:100%; display:flex; flex-flow:row wrap; justify-content:center; align-items:center;}
+        #month .monthRec .box2 .moslide li .mbox1 .imgbox a img {width:70%; height:70%; margin:0 0 0 20px}
+        #month .monthRec .box2 .moslide li .mbox1 .boxTxt {width:60%; height:100%; display:flex; flex-flow:row wrap; align-content: center;}
+        #month .monthRec .box2 .moslide li .mbox1 .boxTxt h3 {font-size:15px;}
+        #month .monthRec .box2 .moslide li .mbox1 .boxTxt p {font-size:13px;}
+        #month .monthRec .box2 .moslide li .mbox2 {width:100%; height:50%; display:flex; flex-flow:row wrap;}
+        #month .monthRec .box2 .moslide li .mbox2 .imgbox {width:40%; height:100%; display:flex; flex-flow:row wrap; justify-content:center; align-items:center;}
+        #month .monthRec .box2 .moslide li .mbox2 .imgbox a img {width:70%; height:70%; margin:0 0 0 20px}
+        #month .monthRec .box2 .moslide li .mbox2 .boxTxt {width:60%; height:100%; display:flex; flex-flow:row wrap; align-content: center;}
+        #month .monthRec .box2 .moslide li .mbox2 .boxTxt h3 {font-size:15px;}
+        #month .monthRec .box2 .moslide li .mbox2 .boxTxt p {font-size:13px;}
+
+        #month .monthSer {width:50%; height:100%;}
+        #month .monthSer .section {width:100%; height:70%;}
+        #month .monthSer .section #booklist {display:flex; flex-flow:row wrap; justify-content:start; align-items:flex-end; height:36px;}
+        #month .monthSer .section #booklist li {width:50%; height:100%; display:flex; flex-flow:row wrap; justify-content:center; align-items:flex-end; font-size:12px; padding:0 0 7px 0; border-bottom:1px solid #000;}
+        #month .monthSer .section #booklist li:first-child {border:1px solid #000; border-bottom:none;}
+        #month .monthSer .section #booklist li:hover {cursor: pointer;}
+        #month .monthSer .section #list_a {width:100%; height:85%;}
+        #month .monthSer .section #list_a .box {width:21.7%; height:80%; margin:55px 5px 5px 10px; float:left; display:flex; flex-flow:row wrap;}
+        #month .monthSer .section #list_a .box img {width:80%; height:90%; margin:0 0 0 10px}
+        #month .monthSer .section #list_a .box h3 {font-size:12px; text-align:center;}
+        #month .monthSer .section #list_a .box p {font-size:10px; margin:0 0 0 40px;}
+        #month .monthSer .section #list_b {width:100%; height:85%; display:none;}
+        #month .monthSer .section #list_b .box {width:21%; height:80%; margin:55px 5px 5px 10px; float:left; display:flex; flex-flow:row wrap;}
+        #month .monthSer .section #list_b .box img {width:80%; height:90%; margin:0 0 0 10px}
+        #month .monthSer .section #list_b .box h3 {font-size:12px; text-align:center;}
+        #month .monthSer .section #list_b .box p {font-size:10px; margin:0 0 0 40px;}
+       
+        
+
+        /*CD/DVD/특별판*/
+        #etcWrap {width:100%; height:600px;}
+        #etc {width:980px; height:100%; margin:0 auto; display:flex; flex-flow:row wrap; justify-content:space-between; position:relative;}
+        #etc .etcbox {width:33%; height:100%; display:flex; flex-flow:row wrap; align-content: space-between;}
+        #etc .etcbox .boxTitle {width:100%; height:30px; display:flex; flex-flow:row wrap; align-items:flex-end; border-bottom:1px solid #000;}
+        #etc .etcbox .boxTitle > h1 {font-size:17px;}
+
+        #etc .etcbox .box1 {width:100%; height:80%; display:flex; flex-flow:row wrap; align-content:flex-start; position:relative; overflow:hidden;}
+        #etc .etcbox .box1 span {position: absolute; top:50%; display: block; font-size: 25px; color:#ccc; line-height: 40px; cursor: pointer; height: 50px;}
+        #etc .etcbox .box1 .spprev {left:0;}
+        #etc .etcbox .box1 .spnext {right:0;}
+        
+
+        #etc .etcbox .box1 .boxTitle {width:323.5px; height:30px;display:flex; flex-flow:row wrap; justify-content:space-between; align-content: flex-end; border-bottom:1px solid #000;}
+        #etc .etcbox .box1 .boxTitle h1 {font-size:17px;}
+        #etc .etcbox .box1 .boxTitle span {font-size:12px; color:#666; margin:10px 0 0 0;}
+        #etc .etcbox .box1 .box1Wrap {width:323.5px; height:320px; position:relative; overflow:hidden; background:#eee;}
+        #etc .etcbox .box1 .box1Wrap span {position: absolute; top:50%; display: block; font-size: 25px; color:#ccc; line-height: 40px; cursor: pointer; height: 50px;}
+        #etc .etcbox .box1 .box1Wrap .eprev1 {left:0;}
+        #etc .etcbox .box1 .box1Wrap .enext1 {right:0;}
+
+        #etc .etcbox .box1 .box1Wrap .eprev2 {left:0;}
+        #etc .etcbox .box1 .box1Wrap .enext2 {right:0;}
+
+        #etc .etcbox .box1 .box1Wrap .eslide1 {width:1200px;}
+        #etc .etcbox .box1 .box1Wrap .eslide1 li {width:323.5px; height:320px;float:left; display:flex; flex-flow:row wrap; justify-content:center;}
+        #etc .etcbox .box1 .box1Wrap .eslide1 li img {width:120%; height:90%; margin:10px 0 0 -10px}
+        #etc .etcbox .box1 .box1Wrap .eslide1 li h3 {font-size:12px; text-align:center; width:100%;}
+        #etc .etcbox .box1 .box1Wrap .eslide1 li p {font-size:10px;}
+
+        #etc .etcbox .box1 .box1Wrap .eslide2 {width:1200px;}
+        #etc .etcbox .box1 .box1Wrap .eslide2 li {width:323.5px; height:320px; float:left; display:flex; flex-flow:row wrap; justify-content:center;}
+        #etc .etcbox .box1 .box1Wrap .eslide2 li img {width:120%; height:90%; margin:10px 0 0 -10px}
+        #etc .etcbox .box1 .box1Wrap .eslide2 li h3 {font-size:12px; text-align:center; width:100%;}
+        #etc .etcbox .box1 .box1Wrap .eslide2 li p {font-size:10px;}
+        
+
+        #etc .etcbox .box1 .box1Wrap_b1 {width:100%; height:140px; display:flex; flex-flow:row wrap; background:#eee;}
+        #etc .etcbox .box1 .box1Wrap_b1 .box1 {width:50%; height:100%; display:flex; flex-flow:row wrap; justify-content:center;  border-top:1px solid #ddd}
+        #etc .etcbox .box1 .box1Wrap_b1 .box1 a img {width:70px; height:80px; margin:10px 0 0 0;}
+        #etc .etcbox .box1 .box1Wrap_b1 .box1 h3 {font-size:10px; text-align:center}
+
+        #etc .etcbox .box1 .box1Wrap_b1 .box2 {width:50%; height:100%; display:flex; flex-flow:row wrap; justify-content:center; border-top:1px solid #ddd}
+        #etc .etcbox .box1 .box1Wrap_b1 .box2 a img {width:70px; height:80px; margin:10px 0 0 0;}
+        #etc .etcbox .box1 .box1Wrap_b1 .box2 h3 {font-size:10px; text-align:center; margin:-20px 0 0 0;}
+
+        #etc .etcbox .box1 .box1Wrap_b2 {width:100%; height:140px; display:flex; flex-flow:row wrap; background:#eee;}
+        #etc .etcbox .box1 .box1Wrap_b2 .box1 {width:50%; height:100%; display:flex; flex-flow:row wrap; justify-content:center; border-top:1px solid #ddd}
+        #etc .etcbox .box1 .box1Wrap_b2 .box1 a img {width:70px; height:80px; margin:10px 0 0 0;}
+        #etc .etcbox .box1 .box1Wrap_b2 .box1 h3 {font-size:10px; text-align:center}
+
+        #etc .etcbox .box1 .box1Wrap_b2 .box2 {width:50%; height:100%; display:flex; flex-flow:row wrap; justify-content:center; border-top:1px solid #ddd}
+        #etc .etcbox .box1 .box1Wrap_b2 .box2 a img {width:70px; height:80px; margin:10px 0 0 0;}
+        #etc .etcbox .box1 .box1Wrap_b2 .box2 h3 {font-size:10px; text-align:center; margin:-20px 0 0 0;}
+
+        #etc .etcbox .box1 .spWrap {width:323.5px; height:520px;}
+        #etc .etcbox .box1 .spWrap .eslide3 {width:1000px; position:absolute;}
+        #etc .etcbox .box1 .spWrap .eslide3 li {width:323.5px; height:520px; background:#eee; float:left; display:flex; flex-flow:row wrap; justify-content:center;}
+        #etc .etcbox .box1 .spWrap .eslide3 li a img {width:200px; height:250px; margin:20px 0 0 0;}
+        #etc .etcbox .box1 .spWrap .eslide3 li h6 {position:absolute; margin:300px 0 0 0; color:navy; font-size:17px; border-bottom:1px solid #000;}
+        #etc .etcbox .box1 .spWrap .eslide3 li h3 {font-size:12px; text-align:center; width:100%;}
+        #etc .etcbox .box1 .spWrap .eslide3 li p {font-size:11px; text-align:center; margin:-70px 0 0 0}
+        
+
+        #etc .etcbox .box2 {width:100%; height:15%;}
+        #etc .etcbox .box2 a img {width:100%; height:100%;}
+
+        /*서비스&헤택*/
+        #serviceWrap {width:100%; height:150px; margin:0 0 30px 0;}
+        #service {width:980px; height:100%; margin:0 auto; display:flex; flex-flow:row wrap;}
+        #service .boxTitle {width:100%; height:25%; display:flex; flex-flow:row wrap; justify-content:space-between; align-items:end; border-bottom:2px solid #000;}
+        #service .boxTitle h1 {font-size:22px;}
+        #service .boxTitle p {font-size:12px;}
+        #service .boxTitle p span {font-size:10px; color:#333;}
+        #service .boxTitle p .right {background:#333; border-radius:50%; color:#fff; padding:0 1.5px 1.5px 1.5px;}
+        
+        #service .servicebox {width:100%; height:85%;}
+        #service .servicebox .sermenu {display:flex; flex-flow:row wrap; justify-content:start;}
+        #service .servicebox .sermenu li {margin:15px 53px 0 0; font-size:15px;}        
+        #service .servicebox .sermenu li td {font-size:12px;}                
+        #service .servicebox .sub > li {font-size:10px; color:#666; line-height:5px;}
+        #service .servicebox .sub > li:hover {color:#000; cursor: pointer;}                
+        #service .servicebox .sub .rotate:hover img {transform:rotate(360deg); transition:all 0.7s}
+        
+
+        /*쿠폰/상품권*/
+        #friendWrap {width:100%; height:59px; background:#58cfc7;}
+        #friendbox {width:980px; height:100%; margin:0 auto; background:#fff; display:flex; flex-flow:row wrap; justify-content:space-between;}
+        #friendbox .box {width:49.9%; height:100%; background:#58cfc7; display:flex; flex-flow:row wrap; justify-content:center; align-items:center;}        
+        #friendbox .box h1 {font-size:16px; color:#fff;}
+        #friendbox .box h1 span {color:yellow}
+
+        /*하단*/
+        footer {width:100%; height:220px;}
+        #footerWrap {width:980px; height:100%; margin:0 auto;}
+        #footerWrap .fbox1 {width:100%; height:20%;}
+        #footerWrap .fbox1 .list_a {display:flex; flex-flow:row wrap; justify-content:space-between;}        
+        #footerWrap .fbox1 .list_a li {color:#333; font-size:10px; line-height:40px;}        
+        #footerWrap .fbox1 .list_a li a {text-decoration:none; color:#666; font-size:12px;}        
+        #footerWrap .fbox1 .list_a li a:hover {text-decoration:underline;}
+        #footerWrap .fbox1 .list_a .info a {color:#000; font-size:12px; font-weight:bold;}
+        #footerWrap .fbox2 {width:100%; height:50%; }
+        #footerWrap .fbox2 .list_b {display:flex; flex-flow:row wrap; justify-content:start;}
+        #footerWrap .fbox2 .list_b li {font-size:12px; padding:3px; margin:1px;}
+        #footerWrap .fbox2 .list_b li button {border:none; color:#fff; background:#555; font-size:10px; cursor:pointer; margin:0 0 0 5px;}
+        #footerWrap .fbox2 .list_b .a {border-left:1px solid #666; border-right:1px solid #555;}
+
+        #footerWrap .fbox2 .list_b li .sub li {font-size:10px; color:#666;}
+        #footerWrap .fbox3 {width:100%; height:30%;}
+        #footerWrap .fbox3 h6 {font-size:10px; color:#666}
+        #footerWrap .fbox3 p {font-size:10px; color:#999}
+    </style>
+</head>
+
+<body>
+    <!--사이드 로그인창-->
+    <div class="loginfixed">
+        <div class="fixloginbox">
+            <h3> LOGIN </h3>
+            <p> 반갑습니다. <br> 로그인해주세요 </p>
+            <button> 로그인 </button>
+        </div>
+        <div class="bixbox"> 도서상품권 <i class="fas fa-chevron-right"></i> </div>
+        <div class="bixbox"> 북카트 <i class="fas fa-caret-up"></i> </div>
+        <div class="bixbox"> 오늘 본 상품 <span>(1)</span> <i class="fas fa-caret-up"></i> </div>
+        <div class="bixbox"> <img src="img/sidelogimg.jpg" alt=""> </div>
+        <div class="bixbox">
+            <div id="topBtn"> <i class="fas fa-caret-up noab"></i> TOP </div>
+        </div>
+        <div class="nextbox">
+            <span class="prev"> &gt; </span>
+            <span class="next"> &lt; </span>
+        </div>
+    </div>
+
+    
+    <!--헤더-->
+    <header>
+        <div id="topBanner">            
+            <div class="box1">
+                <img src="img/topbanner1.jpg">
+            </div>
+            <div class="box2">
+                <img src="img/topbanner2.jpg">
+                <div class="box3">
+                    <img src="img/closeBtn.png">
+                </div>
+            </div>            
+        </div>
+        <div id="htopWrap">
+            <div id="htop">
+
+                <div id="home">
+                    <div class="box"><a href="#">홈</a></div>
+                    <div class="box"><a href="#">도서 바로가기</a></div>
+                    <div class="box"><a href="#">티켓</a></div>
+                    <div class="box"><a href="#">투어</a></div>
+                </div>
+
+                <div id="login">
+                    <ul class="login">
+                        <li><a href="#">로그인</a></li>
+                        <li class="sbar"><a href="#">|</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li class="sbar"><a href="#">|</a></li>
+                        <li><a href="#">북카트</a></li>
+                        <li class="sbar"><a href="#">|</a></li>
+                        <li><a href="#">마이페이지
+                            <ul class="sub">
+                                <li><a href="#"><strong>·</strong>마이도서</a></li>
+                                <li><a href="#"><strong>·</strong>주문배송조회</a></li>
+                                <li><a href="#"><strong>·</strong>I-포인트적립</a></li>
+                                <li><a href="#"><strong>·</strong>나의할인쿠폰</a></li>
+                                <li><a href="#"><strong>·</strong>회원수정</a></li>
+                            </ul>
+                        </a></li>
+                        <li class="sbar"><a href="#">|</a></li>
+                        <li><a href="#">북피니언</a></li>
+                        <li class="sbar"><a href="#">|</a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li class="sbar"><a href="#">|</a></li>
+                        <li><a href="#">모바일APP</a></li>
+                        <li class="sbar"><a href="#">|</a></li>
+                        <li><a href="#">Language
+                            <ul class="sub">
+                                <li><a href="#"><strong>·</strong>English</a></li>
+                                <li><a href="#"><strong>·</strong>日本語</a></li>
+                                <li><a href="#"><strong>·</strong>中文</a></li>
+                            </ul>
+                        </a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="hsecWrap">
+            <div id="hsec">
+                <div id="logo">
+                    <a href="#"><img src="img/logo.jpg"></a>
+                </div>
+                <div id="serchWrap">
+                    <div id="serchtop"></div>
+                    <div id="serch">                        
+                        <input name="serch">      
+                        <div id="serchbtn">
+                            <a href="#"><i class="fas fa-search"></i></a>
+                        </div>                  
+                    </div>
+                    <div id="serchBot">
+                        <ul>
+                            <li><a href="#">김훈 소설집</a></li>
+                            <li class="sbar">|</li>
+                            <li><a href="#">치매 백과사전</a></li>
+                            <li class="sbar">|</li>
+                            <li><a href="#">프로파일러</a></li>
+                            <li class="sbar">|</li>
+                            <li><a href="#">안녕달 신간</a></li>
+                            <li class="sbar">|</li>
+                            <li><a href="#">핏블리</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="ad">
+                    <a href="#"><img src="img/ad.jpg"></a>
+                </div>
+            </div>
+        </div>
+
+        <!--카테고리-->
+        <div id="hbotWrap">
+            <nav>
+                <div id="categoryAll">                    
+                    <span class="fa fa-bars" title="menu"></span>                                    
+                </div>
+                <!--전체카테고리 메뉴-->
+                <div class="categoryMenu">      
+                    <div class="categoryWrap">
+
+                        <div class="category1">
+                            <h1>국내도서</h1>
+                            <div class="cate1Box1">
+                                <ul class="ko">
+                                    <li><a href="#">소설</a></li>
+                                    <li><a href="#">장르소설</a></li>
+                                    <li><a href="#">시ㆍ에세이</a></li>
+                                    <li><a href="#">경제경영</a></li>
+                                    <li><a href="#">자기계발</a></li>
+                                    <li><a href="#">사회과학</a></li>
+                                    <li><a href="#">역사ㆍ문화</a></li>
+                                    <li><a href="#">예술ㆍ대중문화</a></li>
+                                    <li><a href="#">인문</a></li>
+                                    <li><a href="#">자연ㆍ과학</a></li>
+                                    <li><a href="#">종교ㆍ역학</a></li>
+                                    <li><a href="#">유아</a></li>
+                                    <li><a href="#">아동</a></li>
+                                    <li><a href="#">가정과생활</a></li>
+                                    <li><a href="#">청소년</a></li>
+                                    <li><a href="#">초등학습</a></li>
+                                    <li><a href="#">중등학습</a></li>
+                                    <li><a href="#">고등학습</a></li>
+                                    <li><a href="#">국어ㆍ외국어ㆍ사전</a></li>                                
+                                </ul>
+                            </div>
+                            
+                            <div calss="cate1Box2">
+                                <ul class="ko">
+                                    <li><a href="#">자격서수험서</a></li>
+                                    <li><a href="#">공무원수험서</a></li>
+                                    <li><a href="#">컴퓨터ㆍ인터넷</a></li>
+                                    <li><a href="#">전공ㆍ대학교재</a></li>
+                                    <li><a href="#">여행</a></li>
+                                    <li><a href="#">취미레져</a></li>
+                                    <li><a href="#">건강뷰티</a></li>
+                                    <li><a href="#">잡지</a></li>
+                                    <li><a href="#">만화ㆍ라이트노벨</a></li>
+                                    <li><a href="#">유아동전집</a></li>
+                                    <li><a href="#">예약판매</a></li>                                
+                                </ul>
+                            </div>                           
+                        </div>
+
+                        <div class="category2">
+                            <h1>외국도서</h1>
+                            <ul class="ko1">
+                                <li><a href="#">어린이</a></li>
+                                <li><a href="#">문학</a></li>
+                                <li><a href="#">ELTㆍ사전</a></li>
+                                <li><a href="#">컴퓨터</a></li>
+                                <li><a href="#">경제ㆍ인문</a></li>
+                                <li><a href="#">실용ㆍ예술</a></li>
+                                <li><a href="#">대학ㆍ전문서적</a></li>
+                                <li><a href="#">해외잡지</a></li>
+                                <li><a href="#">학습교구/게임</a></li>
+                                <li><a href="#">프랑스도서</a></li>
+                                <li><a href="#">예약판매</a></li>
+                                <li><a href="#">원서vs번역서</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="category3">
+                            <h1>음반</h1>
+                            <ul class="ko2">
+                                <li><a href="#">가요</a></li>
+                                <li><a href="#">팝</a></li>
+                                <li><a href="#">클래식</a></li>
+                                <li><a href="#">국악</a></li>
+                                <li><a href="#">일본음악</a></li>
+                                <li><a href="#">락</a></li>
+                                <li><a href="#">뉴에이지</a></li>
+                                <li><a href="#">해외구매</a></li>
+                                <li><a href="#">수입음반</a></li>
+                                <li><a href="#">재즈</a></li>
+                                <li><a href="#">유아ㆍ아동ㆍ태교</a></li>
+                                <li><a href="#">뮤직 DVD</a></li>
+                                <li><a href="#">O.S.T</a></li>
+                                <li><a href="#">월드뮤직</a></li>
+                                <li><a href="#">종교</a></li>
+                                <li><a href="#">예약판매</a></li>
+                                <li><a href="#">스타샵</a></li>
+                                <li><a href="#">아티스트파일</a></li>
+                                <li><a href="#">LP</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="category4">
+                            <h1>DVD</h1>
+                            <ul class="ko3">
+                                <li><a href="#">블루레이</a></li>
+                                <li><a href="#">EBS교육용</a></li>
+                                <li><a href="#">유아동ㆍ교육 DVD</a></li>
+                                <li><a href="#">영화</a></li>
+                                <li><a href="#">다큐멘터리</a></li>
+                                <li><a href="#">건강ㆍ취미ㆍ스포츠</a></li>
+                                <li><a href="#">TV시리즈</a></li>
+                                <li><a href="#">해외구매</a></li>
+                                <li><a href="#">블루레이해외구매</a></li>
+                                <li><a href="#">애니메이션</a></li>
+                                <li><a href="#">예약판매</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="category5">
+                            <h1>굿즈#</h1>
+                            <ul class="ko4">
+                                <li><a href="#">문구/팬시</a></li>
+                                <li><a href="#">사무/학용</a></li>
+                                <li><a href="#">학습</a></li>
+                                <li><a href="#">독서용품</a></li>
+                            </ul>
+                        </div>
+
+                    </div>                                     
+                </div>
+
+                <div id="category1">
+                    <ul>
+                        <li><a href="#">베스트셀러</a></li>
+                        <li><a href="#">신간</a></li>
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">정가인하</a></li>
+                    </ul>
+                </div>
+
+                <div id="category2Wrap">
+                    <div id="category2">
+                        <ul>
+                            <li><a href="#">음반</a></li>
+                            <li><a href="#">DVD</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </nav>
+        </div>
+
+    </header>
+
+    <!--메인-->
+    <main>
+        <!--슬라이드-->
+        <div id="sliderWrap" style="background:#f5ebd9">
+            <div id="slideWrap">                
+                <div id="slideImg">
+                    <ul class="slide">
+                        <li><a href="#"><img src="img/slideimg/slide1.crdownload"></a></li>
+                        <li><a href="#"><img src="img/slideimg/slide2.png"></a></li>
+                        <li><a href="#"><img src="img/slideimg/slide3.png"></a></li>
+                        <li><a href="#"><img src="img/slideimg/slide4.png"></a></li>
+                    </ul>
+                    <span class="prev">&lt;</span>
+                    <span class="next">&gt;</span>
+                </div>
+
+                <!--랭킹박스-->
+                <div id="ranking">
+
+                    <div class="ranWrap1">
+                        <h1><a href="#">베스트셀러</a></h1>
+                    </div>
+
+                    <div class="ranWrap2">
+                        <ul class="ranmenu">
+                            <li>오늘</li>
+                            <li>주간</li>
+                        </ul>
+                    </div>
+
+                    <div class="ranWrap3">
+                        <ul>
+                            <li><a href="#">
+                                <span class="no">1</span>
+                                <span class="udWrap">
+                                    <i class="fa fa-caret-up" id="iconUp"></i>
+                                    <em>3</em>
+                                </span>                               
+                                <strong>기분을 관리하면 인생이 관리된다</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">2</span>
+                                <span class="udWrap">
+                                    <i class="fa fa-caret-up" id="iconUp"></i>
+                                    <em>1</em>
+                                </span>                               
+                                <strong>인플레이션에서 살아남기</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">3</span>
+                                <span class="udWrap">
+                                    <i class="fa fa-caret-down" id="iconDown"></i>
+                                    <em>1</em>
+                                </span>                               
+                                <strong>불편한 편의점(40만부 기념 벚꽃 에디션)</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">4</span>
+                                <span class="udWrap">
+                                    <i class="fa fa-caret-down" id="iconDown"></i>
+                                    <em>3</em>
+                                </span>                               
+                                <strong>작별인사</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">5</span>
+                                <span class="udWrap">
+                                    <i class="fa fa-caret-up" id="iconUp"></i>
+                                    <em>3</em>
+                                </span>                               
+                                <strong>당신은 결국 무엇이든 해내는 사람</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">6</span>
+                                <span class="udWrap">
+                                    <i class="fa fa-minus" id="iconMi"></i>
+                                    <em></em>
+                                </span>                               
+                                <strong>역행자</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">7</span>
+                                <span class="udWrap">
+                                    <i class="fa fa-minus" id="iconMi"></i>
+                                    <em></em>
+                                </span>                               
+                                <strong>실크로드 세계사 세트(블루 커버 에디션)</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">8</span>
+                                <span class="udWrap">
+                                    <i class="fa fa-caret-down" id="iconDown"></i>
+                                    <em>1</em>
+                                </span>                               
+                                <strong>마음의 법칙</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">9</span>
+                                <span class="udWrap">
+                                    <i class="fa fa-caret-up" id="iconUp"></i>
+                                    <em>2</em>
+                                </span>                               
+                                <strong>실크로드 세계사</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">10</span>
+                                <span class="udWrap">
+                                    <i class="fa fa-caret-up" id="iconUp"></i>
+                                    <em>2</em>
+                                </span>                               
+                                <strong>나로서 충분히 괜찮은 사람</strong>
+                            </a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="ranWrap4">
+                        <ul>
+                            <li><a href="#">
+                                <span class="no">1</span>
+                                <span class="udWrap">
+                                    <i class="fa fa-caret-up" id="iconUp"></i>
+                                    <em>1</em>
+                                </span>                               
+                                <strong>역행자</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">2</span>
+                                <span class="udWrap">
+                                    <i class="fa fa-caret-down" id="iconDown"></i>
+                                    <em>1</em>
+                                </span>                               
+                                <strong>작별인사</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">3</span>
+                                <span class="udWrap">
+                                    <i class="fa fa-caret-up" id="iconUp"></i>
+                                    <em>1</em>
+                                </span>                               
+                                <strong>인플레이션에서 살아남기</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">4</span>
+                                <span class="udWrap">
+                                    <i class="fa fa-caret-up" id="iconUp"></i>
+                                    <em>1</em>
+                                </span>                               
+                                <strong>기분을 관리하면 인생이 관리된다</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">5</span>
+                                <span class="udWrap">
+                                    <i class="fa fa-caret-down" id="iconDown"></i>
+                                    <em>2</em>
+                                </span>                               
+                                <strong>불편한 편의점(40만부 기념 벚꽃 에디션)</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">6</span>
+                                <span class="udWrap">
+                                    <span class="new">NEW</span>
+                                    <em></em>
+                                </span>                               
+                                <strong>백년허리 2: 치료편</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">7</span>
+                                <span class="udWrap">
+                                    <i class="fa fa-minus" id="iconMi"></i>
+                                    <em></em>
+                                </span>                               
+                                <strong>나로서 충분히 괜찮은 사람</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">8</span>
+                                <span class="udWrap">
+                                    <i class="fa fa-caret-up" id="iconUp"></i>
+                                    <em>7</em>
+                                </span>                               
+                                <strong>멘탈을 바꿔야 인생이 바뀐다</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">9</span>
+                                <span class="udWrap">
+                                    <span class="new">NEW</span>
+                                    <em></em>
+                                </span>                               
+                                <strong>백년운동</strong>
+                            </a></li>
+
+                            <li><a href="#">
+                                <span class="no">10</span>
+                                <span class="udWrap">
+                                    <span class="new">NEW</span>
+                                    <em></em>
+                                </span>                               
+                                <strong>백년허리 1: 진단편</strong>
+                            </a></li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="sliderControl">
+            <div id="controlWrap">
+                <div class="cbox"></div>
+                <div class="cbox"></div>
+                <div class="cbox"></div>
+                <div class="cbox"></div>
+                <div class="cbox1"></div>
+            </div>
+        </div>
+
+        <!--배너-->
+        <div id="bannerWrap">
+            <div id="banner">
+                <div class="bbox"></div>
+                <div class="bbox"></div>
+                <div class="bbox"></div>
+            </div>
+        </div>
+
+        <!--추천-->
+        <div id="recommendWrap">            
+            <div id="sideBanner">
+                <div class="boxwrap1"> 
+                    <ul class="sideslide">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>                                        
+                    <span class="sideprev">&lt;</span>
+                    <span class="sidenext">&gt;</span>
+                </div>
+                
+                <div class="boxwrap2">
+                    <a href="#"><img src="img/sidebannerad.jpg"></a>
+                </div>
+            </div>  
+            <div id="recomend">               
+                <div id="recomendBox">
+                    <div class="box1">
+                        <div class="box1"><h1>인터파크추천</h1><span><a href="#">더보기</a></span><i class="fa fa-caret-right"></i></div>
+                        <div class="box2">
+                            <span class="aprev">&lt;</span>
+                            <span class="anext">&gt;</span>
+                            <div class="bookWrap">     
+                                <div class="book">
+                                    <ul class="bslide">
+                                       <li>
+                                        <div class="lboxImg"></div>
+                                        <div class="lboxTxt">
+                                            <div class="lboxTxt1"></div>
+                                            <div class="lboxTxt2"></div>
+                                        </div>                                        
+                                       </li>
+                                       <li>
+                                        <div class="lboxImg"></div>
+                                        <div class="lboxTxt">
+                                            <div class="lboxTxt1"></div>
+                                            <div class="lboxTxt2"></div>
+                                        </div> 
+                                       </li>
+                                       <li>
+                                        <div class="lboxImg"></div>
+                                        <div class="lboxTxt">
+                                            <div class="lboxTxt1"></div>
+                                            <div class="lboxTxt2"></div>
+                                        </div> 
+                                       </li>
+                                       <li>
+                                        <div class="lboxImg"></div>
+                                        <div class="lboxTxt">
+                                            <div class="lboxTxt1"></div>
+                                            <div class="lboxTxt2"></div>
+                                        </div> 
+                                       </li>
+                                    </ul>
+                                </div>                                                           
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box2">
+                        <div class="box1"><h1>Trend&Issue</h1></div>
+                        <div class="box2"><img src="img/trendad.png"></div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+
+        <!--초이스-->
+        <div id="choiceWrap">
+            <div id="choice">
+                <div class="box1">
+                    <div class="box1"><h1>출판사<span>초이스!</span></h1></div>
+                    <div class="box2"><img src="img/choice1.jpg"></div>
+                </div>
+
+                <div class="box2">
+                    <div class="box1"><h1>미디어<span>추천!</span></h1></div>
+                    <div class="box2">                        
+                        <ul class="mslide">
+                            <li>
+                                <div class="imgbox"></div>
+                                <div class="lboxTxt1"></div>
+                                <div class="lboxTxt2"></div>
+                            </li>
+                            <li>
+                                <div class="imgbox"></div>
+                                <div class="lboxTxt1"></div>
+                                <div class="lboxTxt2"></div>
+                            </li>
+                            <li>
+                                <div class="imgbox"></div>
+                                <div class="lboxTxt1"></div>
+                                <div class="lboxTxt2"></div>
+                            </li>
+                        </ul>               
+                        <span class="prev">&lt;</span>
+                        <span class="next">&gt;</span>
+                    </div>
+                </div>
+                <div class="box3">
+                    <div class="box1"><h1><span>이 책</span> 어때?</h1></div>
+                    <div class="box2">
+                        <ul class="hslide">
+                            <li>
+                                <div class="imgbox"></div>
+                                <div class="lboxTxt1"></div>
+                                <div class="lboxTxt2"></div>
+                            </li>
+                            <li>
+                                <div class="imgbox"></div>
+                                <div class="lboxTxt1"></div>
+                                <div class="lboxTxt2"></div>
+                            </li>
+                        </ul>
+                        <span class="hprev">&lt;</span>
+                        <span class="hnext">&gt;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--초이스 밑 배너-->
+        <div id="bannerImage">
+            <div id="choiceBanner">
+                <a href><img src="img/choicebanner.png"></a>
+            </div>
+        </div>
+
+        <!--분야별추천-->
+        <div id="fieldWrap">
+            <div id="field">
+                <div class="fbox1">
+                    <div class="titleBox">
+                        <h1>분야별 <span>추천</span></h1>
+                    </div>
+                </div>
+                <div class="section">
+                    <ul id="booklist">
+                        <li>문학</li>
+                        <li>인문/교양</li>
+                        <li>경제/실용</li>
+                        <li>유아/아동</li>
+                        <li>학습/어학</li>
+                        <li>외국/도서</li>
+                      </ul>
+                      
+                    <article id="list_a">
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>                    
+                    </article>
+                                                            
+                    <article id="list_b">
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>                    
+                    </article>
+                                                            
+                    <article id="list_c">
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>                    
+                    </article>
+
+                    <article id="list_d">
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>                        
+                    </article>
+
+                    <article id="list_e">
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>                       
+                    </article>
+                    
+                    <article id="list_f">
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>
+                        <div class="box">
+                            <div class="imgbox"></div>
+                            <div class="boxTxt"></div>
+                        </div>                       
+                    </article>
+                </div>
+                <div class="fbox4">
+                    <img src="img/fieldbanner.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!--이달의 추천-->
+        <div id="monthWrap">
+            <div id="month">
+                <div class="monthRec">
+                    <div class="box1">
+                        <h1><span>주목!</span> 이달의 책</h1>
+                        <span class="more">더보기</span>
+                        <span class="mprev">&lt;</span>
+                        <span class="mnext">&gt;</span>
+                    </div>
+                    <div class="box2">     
+                        <ul class="moslide">
+                            <li>
+                                <div class="mbox1">
+                                    <div class="imgbox"></div>
+                                    <div class="boxTxt"></div>
+                                </div>
+                                <div class="mbox2">
+                                    <div class="imgbox"></div>
+                                    <div class="boxTxt"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="mbox1">
+                                    <div class="imgbox"></div>
+                                    <div class="boxTxt"></div>
+                                </div>
+                                <div class="mbox2">
+                                    <div class="imgbox"></div>
+                                    <div class="boxTxt"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="mbox1">
+                                    <div class="imgbox"></div>
+                                    <div class="boxTxt"></div>
+                                </div>
+                                <div class="mbox2">
+                                    <div class="imgbox"></div>
+                                    <div class="boxTxt"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="mbox1">
+                                    <div class="imgbox"></div>
+                                    <div class="boxTxt"></div>
+                                </div>
+                                <div class="mbox2">
+                                    <div class="imgbox"></div>
+                                    <div class="boxTxt"></div>
+                                </div>
+                            </li>                                                        
+                        </ul>                   
+                    </div>
+                </div>
+                <div class="monthSer">
+                    <div class="section">
+                        <ul id="booklist">
+                            <li>특가할인</li>
+                            <li>정가인하</li>                    
+                          </ul>
+                          
+                        <article id="list_a">
+                            <div class="box">
+                                <div class="imgbox"></div>
+                                <div class="boxTxt"></div>
+                            </div>
+                            <div class="box">
+                                <div class="imgbox"></div>
+                                <div class="boxTxt"></div>
+                            </div>
+                            <div class="box">
+                                <div class="imgbox"></div>
+                                <div class="boxTxt"></div>
+                            </div>
+                            <div class="box">
+                                <div class="imgbox"></div>
+                                <div class="boxTxt"></div>
+                            </div>                                       
+                        </article>
+                                                                
+                        <article id="list_b">
+                            <div class="box">
+                                <div class="imgbox"></div>
+                                <div class="boxTxt"></div>
+                            </div>
+                            <div class="box">
+                                <div class="imgbox"></div>
+                                <div class="boxTxt"></div>
+                            </div>
+                            <div class="box">
+                                <div class="imgbox"></div>
+                                <div class="boxTxt"></div>
+                            </div>
+                            <div class="box">
+                                <div class="imgbox"></div>
+                                <div class="boxTxt"></div>
+                            </div>                                               
+                        </article>                                                                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--CD/DVD/특별판-->
+        <div id="etcWrap">
+            <div id="etc">
+                <div class="etcbox">                    
+                    <div class="box1">
+                        <div class="boxTitle">
+                            <h1>CD</h1>
+                            <span>더보기</span>
+                        </div>
+                        <div class="box1Wrap">
+                            <ul class="eslide1">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <span class="eprev1">&lt;</span>
+                            <span class="enext1">&gt;</span>
+                        </div>
+                        <div class="box1Wrap_b1">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                        </div>
+                    </div>
+                    <div class="box2"></div>
+                </div>
+
+                <div class="etcbox">                    
+                    <div class="box1">
+                        <div class="boxTitle">
+                            <h1>DVD</h1>
+                            <span>더보기</span>
+                        </div>
+                        <div class="box1Wrap">
+                            <ul class="eslide2">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <span class="eprev2">&lt;</span>
+                            <span class="enext2">&gt;</span>
+                        </div>
+                        <div class="box1Wrap_b2">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                        </div>
+                    </div>
+                    <div class="box2"></div>
+                </div>
+
+                <div class="etcbox">                    
+                    <div class="box1">
+                        <div class="boxTitle">
+                            <h1>특별판 Special Ed.</h1>
+                        </div>
+                        <div class="spWrap">
+                            <ul class="eslide3">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>     
+                        <span class="spprev">&lt;</span>                          
+                        <span class="spnext">&gt;</span>
+                    </div>
+                    <div class="box2"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--서비스/혜택-->
+        <div id="serviceWrap">
+            <div id="service">
+                <div class="boxTitle">
+                    <h1>서비스&혜택</h1>
+                    <p>공지사항 <span class="right">&gt;</span> <span>[안내] eBook 서비스 종료에 따른 보유 목록 이관 안내</span></p>
+                </div>
+                <div class="servicebox">
+                    <ul class="sermenu">
+                        <li>알뜰구매 혜택
+                            <ul class="sub">
+                                <li>LPOINT 100% 무제한 사용</li>
+                                <li>OK캐쉬백포인트 100% 무제한 사용</li>
+                                <li>북피니언롯데카드 최대30%청구할인</li>
+                            </ul>
+                        </li>
+                        <li>핵심서비스
+                            <ul class="sub">
+                                <li class="rotate"><img src="img/global.jpg" class="global">인터파크 Global</li>                                
+                            </ul>
+                        </li>
+                        <li>안심배송서비스
+                            <ul class="sub">
+                                <li>해외주문배송 서비스</li>
+                                <li>안심번호 서비스</li>                                
+                            </ul>
+                        </li>
+                        <li>고객센터
+                            <table>
+                                <tr>
+                                    <td>일반문의</td>
+                                    <td>1577-2555</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>eBook문의</td>
+                                    <td>1588-2547</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>월~금(09:00~18:00)</td>
+                                    <td>토요일,일요일,공휴일 휴무</td>
+                                </tr>
+                            </table>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="friendWrap">  
+            <div id="friendbox">
+                <div class="box">
+                    <h1>3,5,8 만원 이상 음반 구매시 더 싸게! <span>음반 할인쿠폰전</span></h1>
+                </div>
+                <div class="box">
+                    <h1>친구에게 상품권 선물 FLEX로 포인트 적립까지! <span>상품권 선물하기</span></h1>
+                </div>
+            </div>            
+        </div>
+
+    </main>
+
+    <!--하단-->
+    <footer>
+        <div id="footerWrap">
+            <div class="fbox1">
+                <ul class="list_a">
+                    <li class="info"><a href="#">개인정보 처리방침</a></li>
+                    <li>|</li>
+                    <li><a href="#">청소년보호정책</a></li>
+                    <li>|</li>
+                    <li><a href="#">이용약관</a></li>
+                    <li>|</li>
+                    <li><a href="#">IR</a></li>
+                    <li>|</li>
+                    <li><a href="#">회사소개</a></li>
+                    <li>|</li>
+                    <li><a href="#">채용공고</a></li>
+                    <li>|</li>
+                    <li><a href="#">우수고객제도</a></li>
+                    <li>|</li>
+                    <li><a href="#">수익배분프로그램</a></li>
+                    <li>|</li>
+                    <li><a href="#">광고안내</a></li>
+                    <li>|</li>
+                    <li><a href="#">담당자안내</a></li>
+                    <li>|</li>
+                    <li><a href="#">판매자매니저</a></li>                    
+                </ul>
+            </div>
+            <div class="fbox2">
+                <ul class="list_b">
+                    <li>주식회사 인터파크
+                        <ul class="sub">
+                            <li>·서울특별시 강남구 삼성로 512 삼성동빌딩 10층(삼성동)</li>
+                            <li>·대표이사 김강세</li>
+                            <li>·사업자등록번호 824-81-02515 ㅣ 통신판매업신고 2022-서울강남-02179</li>
+                        </ul>
+                    </li>
+                    <li class="a">고객센터<button>문의전클릭 &gt;</button>
+                        <ul class="sub">
+                            <li>·전화 1577-2555</li>
+                            <li>·팩스 02-6924-9050</li>
+                            <li>·개인정보보유기간 : 회원탈퇴시까지</li>
+                            <li>·개인정보보호책임자 : cpo@interpark.com</li>
+                        </ul>
+                    </li>
+                    <li>구매안전 서비스
+                        <ul class="sub">
+                            <li>·고객님은 안전거래를 위해 현금으로 5만원 이상 결제시 구매자가 보호를 받을<br> 수 있는 구매안전 서비스를(쇼핑몰보증보험) 이용하실수 있습니다.</li>
+                            <li>·<button>서비스 가입사실 확인 &gt;</button></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="fbox3">
+                <h6>인터파크도서에 등록된 오픈마켓 상품은 그 내용과 책임이 모두 판매자에게 있으며, 인터파크도서는 해당상품과 내용에 대해 책임지지 않습니다.</h6>
+                <p>Copyright ⓒ INTERPARK Corporation All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+<script>
+    $(function(){
+         /*마이페이지/언어선택*/
+    $(".login li").mouseover(function(){
+        $(this).children(".sub").stop().show();
+    });
+    $(".login li").mouseout(function(){
+        $(".sub").hide();
+    });
+
+    /*전체카테고리*/
+    $("#categoryAll").click(function(){
+        $(".categoryMenu").fadeToggle("fast");
+    });
+
+    /*탑배너*/
+    $("#topBanner .box3").click(function(){
+        $("#topBanner").css({"display":"none"});
+    });
+
+    /*사이드로그인*/
+    $(function() {
+        $(".loginfixed > .nextbox").click(function(){
+	        if($(".loginfixed").css("width")=="8px"){
+	            $(".loginfixed").stop().animate({
+	                width : '145',
+	             })
+	                $(".prev").show()
+	                $(".next").hide()
+	        } else {
+	            $(".loginfixed").stop().animate({
+	                width : '8',
+	                })	
+	                $(".next").show()    
+	                $(".prev").hide()
+	            }
+	        })
+        })
+    });           
+</script>
+
+
+<script>
+    $(function(){
+        /*슬라이드 이미지, 슬라이드컨트롤러*/
+    var i=0;
+
+$("#controlWrap .cbox").mouseenter(function(){
+    i=$(this).index();
+});
+
+function slide(){
+    i++;
+    if(i>$(".slide li:last").index()){
+        i=0;
+    }
+    $(".slide li").eq(i).stop().fadeIn("slow");
+    $(".slide li").eq(i-1).stop().fadeOut(); 
+    
+    if(i==1){
+        $("#sliderWrap").css({"background":"#f7cd10"}); 
+        $("#controlWrap .cbox").eq(i-1).css({"color":"black","border-top":"none"});
+        $("#controlWrap .cbox").eq(i).css({"border-top":"3px solid red"});
+        $("#controlWrap .cbox").eq(i).siblings().css({"border-top":"1px solid black"});
+    }else if(i==2){
+        $("#sliderWrap").css({"background":"#e0d1fc"});
+        $("#controlWrap .cbox").eq(i-1).css({"color":"black","border-top":"none"});
+        $("#controlWrap .cbox").eq(i).css({"border-top":"3px solid red"});
+        $("#controlWrap .cbox").eq(i).siblings().css({"border-top":"1px solid black"});
+    }else if(i==3){
+        $("#sliderWrap").css({"background":"#fff7d2"});
+        $("#controlWrap .cbox").eq(i-1).css({"color":"black","border-top":"none"});
+        $("#controlWrap .cbox").eq(i).css({"border-top":"3px solid red"});
+        $("#controlWrap .cbox").eq(i).siblings().css({"border-top":"1px solid black"});
+    }else{
+        $("#sliderWrap").css({"background":"#f5ebd9"});
+        $("#controlWrap .cbox").eq(i-1).css({"color":"black","border-top":"none"});
+        $("#controlWrap .cbox").eq(i).css({"border-top":"3px solid red"});
+        $("#controlWrap .cbox").eq(i).siblings().css({"border-top":"1px solid black"});
+    }
+}           
+
+$("#controlWrap .cbox").eq(0).mouseenter(function(){        
+    $("#sliderWrap").css({"background":"#f5ebd9"}); 
+    $("#controlWrap .cbox").css({"border-top":"none"});
+    $(this).css({"border-top":"3px solid red"});
+    $(this).siblings().css({"border-top":"1px solid black"});
+    $(".slide li").stop().fadeOut();
+    $(".slide li").eq(0).stop().fadeIn("slow");
+});
+$("#controlWrap .cbox").eq(1).mouseenter(function(){        
+    $("#sliderWrap").css({"background":"#f7cd10"}); 
+    $("#controlWrap .cbox").css({"border-top":"none"});
+    $(this).css({"border-top":"3px solid red"});
+    $(this).siblings().css({"border-top":"1px solid black"});
+    $(".slide li").stop().fadeOut();
+    $(".slide li").eq(1).stop().fadeIn("slow");
+});
+$("#controlWrap .cbox").eq(2).mouseenter(function(){        
+    $("#sliderWrap").css({"background":"#e0d1fc"}); 
+    $("#controlWrap .cbox").css({"border-top":"none"});
+    $(this).css({"border-top":"3px solid red"});
+    $(this).siblings().css({"border-top":"1px solid black"});
+    $(".slide li").stop().fadeOut();
+    $(".slide li").eq(2).stop().fadeIn("slow");
+});
+$("#controlWrap .cbox").eq(3).mouseenter(function(){        
+    $("#sliderWrap").css({"background":"#fff7d2"}); 
+    $("#controlWrap .cbox").css({"border-top":"none"});
+    $(this).css({"border-top":"3px solid red"});
+    $(this).siblings().css({"border-top":"1px solid black"});
+    $(".slide li").stop().fadeOut();
+    $(".slide li").eq(3).stop().fadeIn("slow");
+});
+
+
+function next(){
+    i++;
+    if(i>$(".slide li:last").index()){
+        i=0;
+    }
+    $(".slide li").eq(i).stop().fadeIn("slow");
+    $(".slide li").eq(i-1).stop().fadeOut(); 
+    
+    if(i==1){
+        $("#sliderWrap").css({"background":"#f7cd10"});
+        $("#controlWrap .cbox").eq(i-1).css({"color":"black","border-top":"none"});
+        $("#controlWrap .cbox").eq(i).css({"border-top":"3px solid red"});
+        $("#controlWrap .cbox").eq(i).siblings().css({"border-top":"1px solid black"});
+    }else if(i==2){
+        $("#sliderWrap").css({"background":"#e0d1fc"});
+        $("#controlWrap .cbox").eq(i-1).css({"color":"black","border-top":"none"});
+        $("#controlWrap .cbox").eq(i).css({"border-top":"3px solid red"});
+        $("#controlWrap .cbox").eq(i).siblings().css({"border-top":"1px solid black"});
+    }else if(i==3){
+        $("#sliderWrap").css({"background":"#fff7d2"});
+        $("#controlWrap .cbox").eq(i-1).css({"color":"black","border-top":"none"});
+        $("#controlWrap .cbox").eq(i).css({"border-top":"3px solid red"});
+        $("#controlWrap .cbox").eq(i).siblings().css({"border-top":"1px solid black"});
+    }else{
+        $("#sliderWrap").css({"background":"#f5ebd9"});
+        $("#controlWrap .cbox").eq(i-1).css({"color":"black","border-top":"none"});
+        $("#controlWrap .cbox").eq(i).css({"border-top":"3px solid red"});
+        $("#controlWrap .cbox").eq(i).siblings().css({"border-top":"1px solid black"});
+    }
+}
+
+function prev(){
+    i--;
+    if(i>$(".slide li:last").index()||i<-3){
+        i=0;
+    }
+    $(".slide li").eq(i).stop().fadeIn("slow");
+    $(".slide li").eq(i+1).stop().fadeOut(); 
+    
+    if(i==1||i==-3){
+        $("#sliderWrap").css({"background":"#f7cd10"});
+        $("#controlWrap .cbox").eq(i+1).css({"color":"black","border-top":"none"});
+        $("#controlWrap .cbox").eq(i).css({"border-top":"3px solid red"});
+        $("#controlWrap .cbox").eq(i).siblings().css({"border-top":"1px solid black"});
+    }else if(i==2||i==-2){
+        $("#sliderWrap").css({"background":"#e0d1fc"});
+        $("#controlWrap .cbox").eq(i+1).css({"color":"black","border-top":"none"});
+        $("#controlWrap .cbox").eq(i).css({"border-top":"3px solid red"});
+        $("#controlWrap .cbox").eq(i).siblings().css({"border-top":"1px solid black"});
+    }else if(i==3||i==-1){
+        $("#sliderWrap").css({"background":"#fff7d2"});
+        $("#controlWrap .cbox").eq(i+1).css({"color":"black","border-top":"none"});
+        $("#controlWrap .cbox").eq(i).css({"border-top":"3px solid red"});
+        $("#controlWrap .cbox").eq(i).siblings().css({"border-top":"1px solid black"});
+    }else{
+        $("#sliderWrap").css({"background":"#f5ebd9"});
+        $("#controlWrap .cbox").eq(i+1).css({"color":"black","border-top":"none"});
+        $("#controlWrap .cbox").eq(i).css({"border-top":"3px solid red"});
+        $("#controlWrap .cbox").eq(i).siblings().css({"border-top":"1px solid black"});
+    }
+}
+
+$("#sliderWrap .next").click(function(){
+    next();
+});
+
+$("#sliderWrap .prev").click(function(){
+    prev();
+});
+
+var ani=setInterval(slide,5000);
+
+$("#controlWrap .cbox").mouseover(function(){
+    clearInterval(ani);
+});
+
+$("#controlWrap .cbox").mouseout(function(){
+    $(this).css({"border-top":"3px solid red"});
+    ani= setInterval(slide,5000);
+});
+
+/*랭킹박스*/
+$(".ranmenu li").eq(0).click(function(){
+        $(".ranWrap3").show();
+        $(".ranWrap4").hide();
+        $(this).css({"border":"1px solid rgba(255,255,255,0.3)", "border-bottom":"none"});
+        $(".ranmenu li").eq(1).css({"border":"none","border-bottom":"1px solid rgba(255,255,255,0.3)"});
+    });
+
+    $(".ranmenu li").eq(1).click(function(){
+        $(".ranWrap4").show();
+        $(".ranWrap3").hide();
+        $(this).css({"border":"1px solid rgba(255,255,255,0.3)", "border-bottom":"none"});
+        $(".ranmenu li").eq(0).css({"border":"none","border-bottom":"1px solid rgba(255,255,255,0.3)"});
+    });
+    });    
+</script>
+
+<script>
+    $(function(){
+         /*인터파크추천 슬라이드*/
+    function slide1(){
+       $(".bslide").stop().animate({marginLeft:-510},function(){
+           $(".bslide li:first").appendTo(".bslide");
+           $(".bslide").css({marginLeft:0});
+       });
+   }
+
+   function anext(){
+       $(".bslide").stop().animate({marginLeft:-510},function(){
+           $(".bslide li:first").appendTo(".bslide");
+           $(".bslide").css({marginLeft:0});
+       });
+   }
+
+   function aprev(){        
+       $(".bslide li:last").prependTo(".bslide");
+       $(".bslide").css({marginLeft:-510});
+       $(".bslide").stop().animate({marginLeft:0});
+   }
+
+   setInterval(slide1,7000);
+
+   $(".aprev").click(function(){
+       aprev();
+   });
+
+   $(".anext").click(function(){
+       anext();
+   });
+
+   function sidenext(){
+       $("#sideBanner .sideslide").stop().animate({marginLeft:-100},function(){
+           $("#sideBanner .sideslide li:first").appendTo("#sideBanner .sideslide");
+           $("#sideBanner .sideslide").css({marginLeft:0});
+       });
+   }
+
+   function sideprev(){       
+           $("#sideBanner .sideslide li:last").prependTo("#sideBanner .sideslide");
+           $("#sideBanner .sideslide").css({marginLeft:-100});
+           $("#sideBanner .sideslide").stop().animate({marginLeft:0});        
+   }
+
+   $("#sideBanner .sidenext").click(function(){
+       sidenext();
+   });
+
+   $("#sideBanner .sideprev").click(function(){
+       sideprev();
+   });
+    });       
+</script>
+
+<script>
+    $(function(){
+        /*미디어추천 슬라이드*/
+    function mslide(){
+        $(".mslide").stop().animate({marginLeft:-340},function(){
+            $(".mslide li:first").appendTo(".mslide");
+            $(".mslide").css({marginLeft:0});
+        });
+    }
+
+    function mnext(){
+        $(".mslide").stop().animate({marginLeft:-340},function(){
+            $(".mslide li:first").appendTo(".mslide");
+            $(".mslide").css({marginLeft:0});
+        });
+    }
+
+    function mprev(){        
+        $(".mslide li:last").prependTo(".mslide");
+        $(".mslide").css({marginLeft:-340});        
+        $(".mslide").stop().animate({marginLeft:0})
+    }
+    
+    setInterval(mslide,8000);
+
+    $("#choiceWrap .box2 .prev").click(function(){
+        mprev();
+    });
+
+    $("#choiceWrap .box2 .next").click(function(){
+        mnext();
+    });
+
+    /*이책어때 슬라이드*/
+    function hnext(){
+        i++;
+        if(i>$(".hslide li:last").index()){
+            i=0;
+        }        
+        
+        if(i==1){
+            $(".hslide li").eq(i).stop().show();
+            $(".hslide li").eq(i-1).stop().hide(); 
+        }
+        else{
+            $(".hslide li").eq(i).stop().show();
+            $(".hslide li").eq(i-1).stop().hide(); 
+        }
+    }
+
+    function hprev(){
+        i--;
+        if(i>$(".hslide li:last").index()||i<-1){
+            i=0;
+        }        
+        
+        if(i<-1){
+            $(".hslide li").eq(i).stop().show();
+            $(".hslide li").eq(i-1).stop().hide(); 
+        }
+        else{
+            $(".hslide li").eq(i).stop().show();
+            $(".hslide li").eq(i-1).stop().hide(); 
+        }
+    }
+
+    $("#choice .box3 .hnext").click(function(){
+        hnext();
+    });
+
+    $("#choice .box3 .hprev").click(function(){
+        hprev();
+    });
+    });            
+</script>
+
+<script>
+ $(function(){
+    /*분야별추천 멀티페이지*/
+ var i =0;
+ $("#field #booklist li").mouseenter(function(){
+   i = ($(this).index())+1
+   $("#field .section > article").hide()
+
+   $("#field #booklist li").css({
+	"border-bottom":"none",
+             "color":"#000	"
+    })
+
+    $("#field #booklist li:hover").css({
+	"border-bottom":"2px solid #e66a57",
+             "color":"#e66a57"
+    })
+
+   $("#field .section > article:nth-of-type"+"("+i+")").stop().fadeIn("fast")
+ })
+});
+</script>
+
+<script>
+    $(function(){
+        /*이달의 책 슬라이드*/
+        function moslide(){
+        $(".moslide").stop().animate({marginLeft:-441},function(){
+            $(".moslide li:first").appendTo(".moslide");
+            $(".moslide").css({marginLeft:0});
+        });
+    }
+
+    function monext(){
+        $(".moslide").stop().animate({marginLeft:-441},function(){
+            $(".moslide li:first").appendTo(".moslide");
+            $(".moslide").css({marginLeft:0});
+        });
+    }
+
+    function moprev(){        
+        $(".moslide li:last").prependTo(".moslide");
+        $(".moslide").css({marginLeft:-441});
+        $(".moslide").stop().animate({marginLeft:-0});        
+    }
+
+    setInterval(moslide,7000);
+
+    $("#month .monthRec .box1 .mprev").click(function(){
+        moprev();
+    });
+
+    $("#month .monthRec .box1 .mnext").click(function(){
+        monext();
+    });
+    /*이달의 책 특가,정가할인 멀티페이지*/
+    var i =0;
+    $("#month #booklist li").click(function(){
+        i = ($(this).index())+1
+        $("#month .section > article").hide()
+
+        $("#month .section > article:nth-of-type"+"("+i+")").stop().fadeIn("fast")        
+    })
+
+    $("#month #booklist li").eq(0).click(function(){        
+        $(this).css({"border":"1px solid #000", "border-bottom":"none"});
+        $("#month #booklist li").eq(1).css({"border":"none","border-bottom":"1px solid #000"});
+    });
+
+    $("#month #booklist li").eq(1).click(function(){       
+        $(this).css({"border":"1px solid #000", "border-bottom":"none"});
+        $("#month #booklist li").eq(0).css({"border":"none","border-bottom":"1px solid #000"});
+    });
+    
+    });    
+</script>
+
+<script>
+    $(function(){
+        /*CD슬라이드*/
+        function eslide1(){
+        $(".eslide1").stop().animate({marginLeft:-323.5},function(){
+            $(".eslide1 li:first").appendTo(".eslide1");
+            $(".eslide1").css({marginLeft:0});
+        });
+    }
+    
+    function enext(){
+        $(".eslide1").stop().animate({marginLeft:-323.5},function(){
+            $(".eslide1 li:first").appendTo(".eslide1");
+            $(".eslide1").css({marginLeft:0});
+        });
+    }
+
+    function eprev(){        
+        $(".eslide1 li:last").prependTo(".eslide1");
+        $(".eslide1").css({marginLeft:-323.5});
+        $(".eslide1").stop().animate({marginLeft:0});
+    }
+
+    setInterval(eslide1,8000);
+
+    $("#etc .eprev1").click(function(){
+        eprev();
+    });
+
+    $("#etc .enext1").click(function(){
+        enext();
+    });
+
+    /*DVD 슬라이드*/
+    function eslide2(){
+        $(".eslide2").stop().animate({marginLeft:-323.5},function(){
+            $(".eslide2 li:first").appendTo(".eslide2");
+            $(".eslide2").css({marginLeft:0});
+        });
+    }
+    
+    function enext2(){
+        $(".eslide2").stop().animate({marginLeft:-323.5},function(){
+            $(".eslide2 li:first").appendTo(".eslide2");
+            $(".eslide2").css({marginLeft:0});
+        });
+    }
+
+    function eprev2(){        
+        $(".eslide2 li:last").prependTo(".eslide2");
+        $(".eslide2").css({marginLeft:-323.5});
+        $(".eslide2").stop().animate({marginLeft:0});
+    }
+
+    setInterval(eslide2,8000);
+
+    $("#etc .eprev2").click(function(){
+        eprev2();
+    });
+
+    $("#etc .enext2").click(function(){
+        enext2();
+    });
+
+    /*특별판 버튼클릭시 슬라이드*/
+    function spnext(){
+        $(".eslide3").stop().animate({marginLeft:-323.5},function(){
+            $(".eslide3 li:first").appendTo(".eslide3");
+            $(".eslide3").css({marginLeft:0});
+        });
+    }
+
+    function spprev(){        
+        $(".eslide3 li:last").prependTo(".eslide3");
+        $(".eslide3").css({marginLeft:-323.5});
+        $(".eslide3").stop().animate({marginLeft:0});
+    }
+
+    $("#etc .spprev").click(function(){
+        spprev();
+    });
+
+    $("#etc .spnext").click(function(){
+        spnext();
+    });
+    });        
+</script>
+
+</html>
